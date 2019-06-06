@@ -4,6 +4,16 @@ Java wrapper for the CoinGecko API.
     <img src="https://i.ibb.co/sRLCZk2/java-gecko-200.png" alt="java-gecko-200" alt="CoinGecko-Java logo" alt="CoinGecko-Java Logo"/>
 </p>
 
+## Usage
+This documentation will be updated soon.
+
+For complete API documentation please refer to https://www.coingecko.com/api/docs/v3.
+
+```
+CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
+client.ping();
+```
+
 ## License
 MIT License
 
