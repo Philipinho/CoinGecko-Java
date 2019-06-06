@@ -1,5 +1,8 @@
 # CoinGecko-Java
 Java wrapper for the CoinGecko API.
+<p align="center">
+    <img src="https://i.ibb.co/sRLCZk2/java-gecko-200.png" alt="java-gecko-200" alt="CoinGecko-Java logo" alt="CoinGecko-Java Logo"/>
+</p>
 
 ## License
 MIT License
