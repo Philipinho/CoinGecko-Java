@@ -1,6 +1,7 @@
 # CoinGecko-Java
 Java wrapper for the CoinGecko API.
 
+## License
 MIT License
 
 Copyright (c) 2019 Philip Okugbe
