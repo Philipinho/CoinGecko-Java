@@ -5,13 +5,20 @@ Java wrapper for the CoinGecko API.
 </p>
 
 ## Usage
-This documentation will be updated soon.
+This API client covers all CoinGecko's API endpoints and i'll try to update it when new endpoints are added.
 
 For complete API documentation please refer to https://www.coingecko.com/api/docs/v3.
+
+For examples Goto: <a href="https://github.com/Philipinho/CoinGecko-Java/tree/master/src/test/java/com/litesoftwares/coingecko/examples">Examples</a>.
 
 ```
 CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
 client.ping();
+```
+
+To get price of a currency in USD
+```
+client.getPrice("bitcoin",Currency.USD);
 ```
 
 ## License
