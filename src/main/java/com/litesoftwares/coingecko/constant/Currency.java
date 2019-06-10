@@ -27,7 +27,7 @@ public final class Currency {
     public final static String JPY = "jpy";
     public final static String KRW = "krw";
     public final static String KWD = "kwd";
-    public final static String LKR = "lkr";;
+    public final static String LKR = "lkr";
     public final static String MMK = "mmk";
     public final static String MXN = "mxn";
     public final static String MYR = "myr";
