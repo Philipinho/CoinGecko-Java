@@ -46,6 +46,7 @@ out/
 
 # Maven
 target/
+.settings
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
