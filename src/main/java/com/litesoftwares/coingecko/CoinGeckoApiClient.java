@@ -70,6 +70,8 @@ public interface CoinGeckoApiClient {
 
     StatusUpdates getExchangesStatusUpdatesById(String id, Integer perPage, Integer page);
 
+    List<List<String>> getExchangesVolumeChart(String id, Integer days);
+
     StatusUpdates getStatusUpdates();
 
     StatusUpdates getStatusUpdates(String category, String projectType, Integer perPage, Integer page);
