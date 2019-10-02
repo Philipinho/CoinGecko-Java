@@ -13,4 +13,5 @@ public class Order {
     public static String PRICE_DESC =  "price_desc";
     public static String HOUR_24_ASC =  "h24_change_asc";
     public static String HOUR_24_DESC =  "h24_change_desc";
+    public static String TRUST_SCORE_DESC = "trust_score_desc";
 }
