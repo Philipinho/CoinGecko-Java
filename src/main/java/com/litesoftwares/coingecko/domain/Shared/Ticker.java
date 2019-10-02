@@ -36,20 +36,4 @@ public class Ticker {
     @JsonProperty("coin_id")
     private String coinId;
 
-    public boolean isAnomaly() {
-        return isAnomaly;
-    }
-
-    public void setAnomaly(boolean anomaly) {
-        isAnomaly = anomaly;
-    }
-
-    public boolean isStale() {
-        return isStale;
-    }
-
-    public void setStale(boolean stale) {
-        isStale = stale;
-    }
-
 }

@@ -15,8 +15,4 @@ public class StatusUpdates {
     @JsonProperty("status_updates")
     private List<Update> updates;
 
-    public void setStatusUpdates(List<Update> statusUpdates) {
-        this.updates = statusUpdates;
-    }
-
 }
