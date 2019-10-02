@@ -162,6 +162,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
+    public List<List<String>> getExchangesVolumeChart(String id, Integer days) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getExchangesVolumeChart(id,days));
+    }
+
+    @Override
     public StatusUpdates getStatusUpdates() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getStatusUpdates());
     }

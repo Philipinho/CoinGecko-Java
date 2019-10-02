@@ -14,6 +14,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -90,6 +91,9 @@ public interface CoinGeckoApiService {
     @GET("exchanges/{id}/status_updates")
     Call<StatusUpdates> getExchangesStatusUpdatesById(@Path("id") String id, @Query("per_page")Integer perPage,
                                                                @Query("page") Integer page);
+
+    @GET("exchanges/{id}/volume_chart")
+    Call<List<List<String>>> getExchangesVolumeChart(@Path("id") String id,@Query("days") Integer days);
 
     @GET("status_updates")
     Call<StatusUpdates> getStatusUpdates();
