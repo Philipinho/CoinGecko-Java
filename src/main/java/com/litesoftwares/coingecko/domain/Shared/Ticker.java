@@ -27,6 +27,10 @@ public class Ticker {
     private double bidAskSpreadPercentage;
     @JsonProperty("timestamp")
     private String timestamp;
+    @JsonProperty("last_traded_at")
+    private String lastTradedAt;
+    @JsonProperty("last_fetch_at")
+    private String lastFetchAt;
     @JsonProperty("is_anomaly")
     private boolean isAnomaly;
     @JsonProperty("is_stale")
