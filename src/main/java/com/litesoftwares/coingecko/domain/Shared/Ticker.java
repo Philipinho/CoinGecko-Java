@@ -23,6 +23,8 @@ public class Ticker {
     private Map<String, String> convertedLast;
     @JsonProperty("converted_volume")
     private Map<String, String> convertedVolume;
+    @JsonProperty("trust_score")
+    private String trustScore;
     @JsonProperty("bid_ask_spread_percentage")
     private double bidAskSpreadPercentage;
     @JsonProperty("timestamp")
