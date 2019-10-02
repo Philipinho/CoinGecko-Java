@@ -83,12 +83,12 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public CoinTickerById getCoinTickerById(String id) {
-        return getCoinTickerById(id,null,null);
+        return getCoinTickerById(id,null,null,null);
     }
 
     @Override
-    public CoinTickerById getCoinTickerById(String id, String exchangeIds, Integer page) {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinTickerById(id,exchangeIds,page));
+    public CoinTickerById getCoinTickerById(String id, String exchangeIds, Integer page, String order) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinTickerById(id,exchangeIds,page,order));
     }
 
     @Override
@@ -143,12 +143,12 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public ExchangesTickersById getExchangesTickersById(String id) {
-        return getExchangesTickersById(id,null,null);
+        return getExchangesTickersById(id,null,null,null);
     }
 
     @Override
-    public ExchangesTickersById getExchangesTickersById(String id, String coinIds, Integer page) {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getExchangesTickersById(id,coinIds,page));
+    public ExchangesTickersById getExchangesTickersById(String id, String coinIds, Integer page, String order) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getExchangesTickersById(id,coinIds,page,order));
     }
 
     @Override

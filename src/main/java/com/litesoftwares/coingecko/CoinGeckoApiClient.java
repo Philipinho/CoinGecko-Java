@@ -40,7 +40,7 @@ public interface CoinGeckoApiClient {
 
     CoinTickerById getCoinTickerById(String id);
 
-    CoinTickerById getCoinTickerById(String id, String exchangeIds, Integer page);
+    CoinTickerById getCoinTickerById(String id, String exchangeIds, Integer page, String order);
 
     CoinHistoryById getCoinHistoryById(String id, String date);
 
@@ -64,7 +64,7 @@ public interface CoinGeckoApiClient {
 
     ExchangesTickersById getExchangesTickersById(String id);
 
-    ExchangesTickersById getExchangesTickersById(String id, String coinIds, Integer page);
+    ExchangesTickersById getExchangesTickersById(String id, String coinIds, Integer page, String order);
 
     StatusUpdates getExchangesStatusUpdatesById(String id);
 

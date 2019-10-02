@@ -54,7 +54,7 @@ public interface CoinGeckoApiService {
 
     @GET("coins/{id}/tickers")
     Call<CoinTickerById> getCoinTickerById(@Path("id") String id, @Query("exchange_ids") String exchangeIds,
-                                           @Query("page") Integer page);
+                                           @Query("page") Integer page,@Query("order") String order);
 
     @GET("coins/{id}/history")
     Call<CoinHistoryById> getCoinHistoryById(@Path("id") String id, @Query("date") String date,
@@ -85,7 +85,7 @@ public interface CoinGeckoApiService {
 
     @GET("exchanges/{id}/tickers")
     Call<ExchangesTickersById> getExchangesTickersById(@Path("id") String id, @Query("coin_ids") String coinIds,
-                                                       @Query("page") Integer page);
+                                                       @Query("page") Integer page, @Query("order") String order);
 
     @GET("exchanges/{id}/status_updates")
     Call<StatusUpdates> getExchangesStatusUpdatesById(@Path("id") String id, @Query("per_page")Integer perPage,
