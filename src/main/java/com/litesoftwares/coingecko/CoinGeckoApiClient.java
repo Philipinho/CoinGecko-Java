@@ -18,6 +18,8 @@ public interface CoinGeckoApiClient {
 
     Map<String, Map<String, Double>> getPrice(String ids, String vsCurrencies);
 
+    Map<String, Map<String, Double>> getPrice(List<String> ids, String vsCurrencies);
+
     Map<String, Map<String, Double>> getPrice(String ids, String vsCurrencies, boolean includeMarketCap, boolean include24hrVol,
                                               boolean include24hrChange, boolean includeLastUpdatedAt);
 
@@ -76,7 +78,7 @@ public interface CoinGeckoApiClient {
 
     StatusUpdates getStatusUpdates(String category, String projectType, Integer perPage, Integer page);
 
-    Events getEvents();
+    Events  getEvents();
 
     Events getEvents(String countryCode, String type, Integer page, boolean upcomingEventsOnly, String fromDate, String toDate);
 

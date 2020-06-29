@@ -15,6 +15,7 @@ import com.litesoftwares.coingecko.CoinGeckoApiClient;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     private CoinGeckoApiService coinGeckoApiService;
@@ -37,8 +38,14 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
-    public Map<String, Map<String, Double>> getPrice(String ids, String vsCurrencies, boolean includeMarketCap, boolean include24hrVol, boolean include24hrChange, boolean includeLastUpdatedAt) {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getPrice(ids, vsCurrencies,includeMarketCap, include24hrVol, include24hrChange, includeLastUpdatedAt));
+    public Map<String, Map<String, Double>> getPrice(List<String> idsList, String vsCurrencies) {
+        String ids = idsList.stream().collect(Collectors.joining(","));
+        return getPrice(ids, vsCurrencies);
+    }
+
+    @Override
+    public Map<String, Map<String, Double>> getPrice(String idsList, String vsCurrencies, boolean includeMarketCap, boolean include24hrVol, boolean include24hrChange, boolean includeLastUpdatedAt) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getPrice(idsList, vsCurrencies,includeMarketCap, include24hrVol, include24hrChange, includeLastUpdatedAt));
     }
 
     @Override
