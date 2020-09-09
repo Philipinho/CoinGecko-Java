@@ -3,11 +3,9 @@ package com.litesoftwares.coingecko.domain.Coins;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.*;
 import com.litesoftwares.coingecko.domain.Shared.Image;
-import com.litesoftwares.coingecko.domain.Shared.Ticker;
-import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
-import lombok.*;
 
-import java.util.List;
+import lombok.Data;
+
 import java.util.Map;
 
 @Data
