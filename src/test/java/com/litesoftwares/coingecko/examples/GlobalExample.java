@@ -4,7 +4,6 @@ import com.litesoftwares.coingecko.CoinGeckoApiClient;
 import com.litesoftwares.coingecko.domain.Global.Global;
 import com.litesoftwares.coingecko.impl.CoinGeckoApiClientImpl;
 
-import java.util.Map;
 
 public class GlobalExample {
     public static void main(String[] args) {

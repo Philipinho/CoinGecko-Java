@@ -44,6 +44,11 @@ cmake-build-*/
 # IntelliJ
 out/
 
+# Eclipse
+.settings
+.classpath
+.project
+
 # Maven
 target/
 .settings

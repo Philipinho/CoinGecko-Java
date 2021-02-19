@@ -18,6 +18,12 @@ public class MarketData {
     private Map<String, Double> athChangePercentage;
     @JsonProperty("ath_date")
     private Map<String, String> athDate;
+    @JsonProperty("atl")
+    private Map<String, Double> atl;
+    @JsonProperty("atl_change_percentage")
+    private Map<String, Double> atlChangePercentage;
+    @JsonProperty("atl_date")
+    private Map<String, String> atlDate;
     @JsonProperty("market_cap")
     private Map<String, Double> marketCap;
     @JsonProperty("market_cap_rank")
@@ -70,8 +76,12 @@ public class MarketData {
     private Map<String, Double> marketCapChange24hInCurrency;
     @JsonProperty("market_cap_change_percentage_24h_in_currency")
     private Map<String, Double> marketCapChangePercentage24hInCurrency;
+    @JsonProperty("fully_diluted_valuation")
+    private Map<String, Long> fullyDilutedValuation;
     @JsonProperty("total_supply")
     private long totalSupply;
+    @JsonProperty("max_supply")
+    private long maxSupply;
     @JsonProperty("circulating_supply")
     private double circulatingSupply;
     @JsonProperty("last_updated")
