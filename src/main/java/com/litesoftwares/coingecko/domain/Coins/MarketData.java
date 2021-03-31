@@ -78,6 +78,12 @@ public class MarketData {
     private Map<String, Double> marketCapChangePercentage24hInCurrency;
     @JsonProperty("fully_diluted_valuation")
     private Map<String, Long> fullyDilutedValuation;
+    @JsonProperty("total_value_locked")
+    private Map<String, Long> totalValueLocked;
+    @JsonProperty("mcap_to_tvl_ratio")
+    private String mcapToTvlRatio;
+    @JsonProperty("fdv_to_tvl_ratio")
+    private String fdvToTvlRatio;
     @JsonProperty("total_supply")
     private long totalSupply;
     @JsonProperty("max_supply")
