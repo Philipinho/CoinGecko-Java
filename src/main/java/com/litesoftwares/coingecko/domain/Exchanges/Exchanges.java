@@ -25,5 +25,8 @@ public class Exchanges {
     boolean hasTradingIncentive;
     @JsonProperty("trade_volume_24h_btc")
     double tradeVolume24hBtc;
-
+    @JsonProperty("trust_score")
+    int trustScore;
+    @JsonProperty("trust_score_rank")
+    int trustScoreRank;
 }
