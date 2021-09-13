@@ -128,7 +128,7 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public List<Exchanges> getExchanges() {
-        return getExchanges(100, 1);
+        return getExchanges(100, 0);
     }
 
     @Override
