@@ -97,8 +97,8 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
-    public CoinHistoryById getCoinHistoryById(String id, String data, boolean localization) {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinHistoryById(id,data,localization));
+    public CoinHistoryById getCoinHistoryById(String id, String date, boolean localization) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinHistoryById(id,date,localization));
     }
 
     @Override
