@@ -58,6 +58,8 @@ public interface CoinGeckoApiClient {
 
     List<Exchanges> getExchanges();
 
+    List<Exchanges> getExchanges(int perPage, int page);
+
     List<ExchangesList> getExchangesList();
 
     ExchangeById getExchangesById(String id);

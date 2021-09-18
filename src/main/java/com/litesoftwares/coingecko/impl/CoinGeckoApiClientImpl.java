@@ -128,7 +128,12 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public List<Exchanges> getExchanges() {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getExchanges());
+        return getExchanges(100, 0);
+    }
+
+    @Override
+    public List<Exchanges> getExchanges(int perPage, int page) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getExchanges(perPage, page));
     }
 
     @Override
