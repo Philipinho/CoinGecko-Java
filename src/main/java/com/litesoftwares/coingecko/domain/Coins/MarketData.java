@@ -1,5 +1,6 @@
 package com.litesoftwares.coingecko.domain.Coins;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 import lombok.*;
@@ -7,6 +8,7 @@ import lombok.*;
 import java.util.Map;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MarketData {
     @JsonProperty("current_price")
     private Map<String, Double> currentPrice;
@@ -78,10 +80,16 @@ public class MarketData {
     private Map<String, Double> marketCapChangePercentage24hInCurrency;
     @JsonProperty("fully_diluted_valuation")
     private Map<String, Long> fullyDilutedValuation;
+    @JsonProperty("total_value_locked")
+    private Map<String, Long> totalValueLocked;
+    @JsonProperty("mcap_to_tvl_ratio")
+    private String mcapToTvlRatio;
+    @JsonProperty("fdv_to_tvl_ratio")
+    private String fdvToTvlRatio;
     @JsonProperty("total_supply")
-    private long totalSupply;
+    private double totalSupply;
     @JsonProperty("max_supply")
-    private long maxSupply;
+    private double maxSupply;
     @JsonProperty("circulating_supply")
     private double circulatingSupply;
     @JsonProperty("last_updated")

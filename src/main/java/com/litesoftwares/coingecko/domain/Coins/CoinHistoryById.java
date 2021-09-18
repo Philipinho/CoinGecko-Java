@@ -1,5 +1,6 @@
 package com.litesoftwares.coingecko.domain.Coins;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.*;
 import com.litesoftwares.coingecko.domain.Shared.Image;
@@ -9,6 +10,7 @@ import lombok.Data;
 import java.util.Map;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CoinHistoryById {
     @JsonProperty("id")
     private String id;

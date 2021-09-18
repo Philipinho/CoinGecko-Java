@@ -19,10 +19,20 @@ public class CoinFullData {
     private String symbol;
     @JsonProperty("name")
     private String name;
+    @JsonProperty("asset_platform_id")
+    private String assetPlatformId;
+    @JsonProperty("platforms")
+    private Map<String, String> platforms;
     @JsonProperty("block_time_in_minutes")
     private long blockTimeInMinutes;
+    @JsonProperty("hashing_algorithm")
+    private String hashingAlgorithm;
     @JsonProperty("categories")
     private List<Object> categories;
+    @JsonProperty("public_notice")
+    private String publicNotice;
+    @JsonProperty("additional_notices")
+    List<String> additionalNotices;
     @JsonProperty("localization")
     private Map<String, String> localization;
     @JsonProperty("description")
@@ -35,6 +45,10 @@ public class CoinFullData {
     private String countryOrigin;
     @JsonProperty("genesis_date")
     private String genesisDate;
+    @JsonProperty("sentiment_votes_up_percentage")
+    private double sentimentVotesUpPercentage;
+    @JsonProperty("sentiment_votes_down_percentage")
+    private double sentimentVotesDownPercentage;
     @JsonProperty("contract_address")
     private String contractAddress;
     @JsonProperty("ico_data")
