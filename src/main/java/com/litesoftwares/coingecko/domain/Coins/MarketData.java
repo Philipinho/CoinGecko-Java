@@ -87,9 +87,9 @@ public class MarketData {
     @JsonProperty("fdv_to_tvl_ratio")
     private String fdvToTvlRatio;
     @JsonProperty("total_supply")
-    private long totalSupply;
+    private double totalSupply;
     @JsonProperty("max_supply")
-    private long maxSupply;
+    private double maxSupply;
     @JsonProperty("circulating_supply")
     private double circulatingSupply;
     @JsonProperty("last_updated")

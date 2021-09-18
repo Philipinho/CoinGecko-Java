@@ -12,7 +12,7 @@ public class Rate {
     @JsonProperty("unit")
     private String unit;
     @JsonProperty("value")
-    private long value;
+    private double value;
     @JsonProperty("type")
     private String type;
 

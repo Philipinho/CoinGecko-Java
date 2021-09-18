@@ -8,18 +8,18 @@ import lombok.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CommunityData {
     @JsonProperty("facebook_likes")
-    private double facebookLikes;
+    private long facebookLikes;
     @JsonProperty("twitter_followers")
-    private double twitterFollowers;
+    private long twitterFollowers;
     @JsonProperty("reddit_average_posts_48h")
     private double redditAveragePosts48h;
     @JsonProperty("reddit_average_comments_48h")
     private double redditAverageComments48h;
     @JsonProperty("reddit_subscribers")
-    private double redditSubscribers;
+    private long redditSubscribers;
     @JsonProperty("reddit_accounts_active_48h")
-    private double redditAccountsActive48h;
+    private long redditAccountsActive48h;
     @JsonProperty("telegram_channel_user_count")
-    private double telegramChannelUserCount;
+    private long telegramChannelUserCount;
 
 }
