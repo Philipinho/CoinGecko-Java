@@ -1,5 +1,6 @@
 package com.litesoftwares.coingecko.domain.Coins;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 import lombok.*;
@@ -7,6 +8,7 @@ import lombok.*;
 import java.util.Map;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MarketData {
     @JsonProperty("current_price")
     private Map<String, Double> currentPrice;

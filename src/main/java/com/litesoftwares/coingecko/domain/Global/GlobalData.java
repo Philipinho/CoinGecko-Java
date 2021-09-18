@@ -1,11 +1,13 @@
 package com.litesoftwares.coingecko.domain.Global;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.util.Map;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GlobalData {
     @JsonProperty("active_cryptocurrencies")
     private long activeCryptocurrencies;
