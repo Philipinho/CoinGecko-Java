@@ -51,5 +51,6 @@ public class CoinsExample {
         String icoStartDate = omiseGoIcoInfo.getIcoStartDate();
         System.out.println(icoStartDate);
 
+        client.shutdown();
     }
 }

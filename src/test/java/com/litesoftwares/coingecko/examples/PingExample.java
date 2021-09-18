@@ -9,5 +9,6 @@ public class PingExample {
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
         System.out.println(client.ping());
 
+        client.shutdown();
     }
 }

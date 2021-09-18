@@ -89,4 +89,6 @@ public interface CoinGeckoApiClient {
     ExchangeRates getExchangeRates();
 
     Global getGlobal();
+
+    void shutdown();
 }

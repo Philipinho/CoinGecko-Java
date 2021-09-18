@@ -210,4 +210,9 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     public Global getGlobal() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getGlobal());
     }
+
+    @Override
+    public void shutdown() {
+        coinGeckoApi.shutdown();
+    }
 }
