@@ -74,6 +74,9 @@ public interface CoinGeckoApiService {
     @GET("coins/{id}/contract/{contract_address}")
     Call<CoinFullData> getCoinInfoByContractAddress(@Path("id") String id, @Path("contract_address") String contractAddress);
 
+    @GET("asset_platforms")
+    Call<List<AssetPlatforms>> getAssetPlatforms();
+
     @GET("exchanges")
     Call<List<Exchanges>> getExchanges(@Query("per_page") int perPage, @Query("page") int page);
 

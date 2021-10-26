@@ -56,6 +56,8 @@ public interface CoinGeckoApiClient {
 
     CoinFullData getCoinInfoByContractAddress(String id, String contractAddress);
 
+    List<AssetPlatforms> getAssetPlatforms();
+
     List<Exchanges> getExchanges();
 
     List<Exchanges> getExchanges(int perPage, int page);
