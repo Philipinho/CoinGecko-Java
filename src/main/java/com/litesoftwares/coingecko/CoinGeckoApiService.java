@@ -8,6 +8,7 @@ import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
 import com.litesoftwares.coingecko.domain.Global.Global;
+import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -120,6 +121,9 @@ public interface CoinGeckoApiService {
 
     @GET("exchange_rates")
     Call<ExchangeRates> getExchangeRates();
+
+    @GET("search/trending")
+    Call<Trending> getTrending();
 
     @GET("global")
     Call<Global> getGlobal();

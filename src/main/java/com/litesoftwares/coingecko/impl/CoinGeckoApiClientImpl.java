@@ -10,6 +10,7 @@ import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
 import com.litesoftwares.coingecko.domain.Global.Global;
+import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
 import com.litesoftwares.coingecko.CoinGeckoApiClient;
 
@@ -209,6 +210,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     @Override
     public ExchangeRates getExchangeRates() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getExchangeRates());
+    }
+
+    @Override
+    public Trending getTrending(){
+        return coinGeckoApi.executeSync(coinGeckoApiService.getTrending());
     }
 
     @Override
