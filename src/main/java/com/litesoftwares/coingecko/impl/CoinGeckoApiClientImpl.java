@@ -127,6 +127,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
+    public List<AssetPlatforms> getAssetPlatforms(){
+        return coinGeckoApi.executeSync(coinGeckoApiService.getAssetPlatforms());
+    }
+
+    @Override
     public List<Exchanges> getExchanges() {
         return getExchanges(100, 0);
     }
