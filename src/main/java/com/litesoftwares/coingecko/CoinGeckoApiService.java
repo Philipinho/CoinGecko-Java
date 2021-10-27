@@ -7,6 +7,7 @@ import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
 import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
@@ -127,4 +128,7 @@ public interface CoinGeckoApiService {
 
     @GET("global")
     Call<Global> getGlobal();
+
+    @GET("global/decentralized_finance_defi")
+    Call<DecentralizedFinanceDefi> getDecentralizedFinanceDefi();
 }
