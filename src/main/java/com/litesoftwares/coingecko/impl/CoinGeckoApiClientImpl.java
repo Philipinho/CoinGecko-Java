@@ -9,6 +9,7 @@ import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
 import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
@@ -220,6 +221,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     @Override
     public Global getGlobal() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getGlobal());
+    }
+
+    @Override
+    public DecentralizedFinanceDefi getDecentralizedFinanceDefi(){
+        return coinGeckoApi.executeSync(coinGeckoApiService.getDecentralizedFinanceDefi());
     }
 
     @Override
