@@ -50,6 +50,8 @@ public interface CoinGeckoApiClient {
 
     MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days);
 
+    MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days, String interval);
+
     MarketChart getCoinMarketChartRangeById(String id, String vsCurrency, String from, String to);
 
     StatusUpdates getCoinStatusUpdateById(String id);
