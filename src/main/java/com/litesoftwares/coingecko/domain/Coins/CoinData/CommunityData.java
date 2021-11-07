@@ -18,7 +18,7 @@ public class CommunityData {
     @JsonProperty("reddit_subscribers")
     private long redditSubscribers;
     @JsonProperty("reddit_accounts_active_48h")
-    private long redditAccountsActive48h;
+    private double redditAccountsActive48h;
     @JsonProperty("telegram_channel_user_count")
     private long telegramChannelUserCount;
 
