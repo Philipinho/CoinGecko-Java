@@ -1,23 +1,34 @@
 package com.litesoftwares.coingecko;
 
-import com.litesoftwares.coingecko.domain.*;
-import com.litesoftwares.coingecko.domain.Coins.*;
+import java.util.List;
+import java.util.Map;
+
+import com.litesoftwares.coingecko.domain.AssetPlatforms;
+import com.litesoftwares.coingecko.domain.Ping;
+import com.litesoftwares.coingecko.domain.Coins.CoinFullData;
+import com.litesoftwares.coingecko.domain.Coins.CoinHistoryById;
+import com.litesoftwares.coingecko.domain.Coins.CoinList;
+import com.litesoftwares.coingecko.domain.Coins.CoinMarkets;
+import com.litesoftwares.coingecko.domain.Coins.CoinTickerById;
+import com.litesoftwares.coingecko.domain.Coins.MarketChart;
+import com.litesoftwares.coingecko.domain.Coins.OhlcSample;
 import com.litesoftwares.coingecko.domain.Events.EventCountries;
 import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
-import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangeById;
+import com.litesoftwares.coingecko.domain.Exchanges.Exchanges;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangesList;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangesTickersById;
 import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
 import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
-
-import java.util.List;
-import java.util.Map;
 
 public interface CoinGeckoApiService {
     @GET("ping")
@@ -45,6 +56,7 @@ public interface CoinGeckoApiService {
 
     @GET("coins/markets")
     Call<List<CoinMarkets>> getCoinMarkets(@Query("vs_currency") String vsCurrency, @Query("ids") String ids,
+    									   @Query("category") String category,
                                            @Query("order") String order, @Query("per_page") Integer perPage,
                                            @Query("page") Integer page, @Query("sparkline") boolean sparkline,
                                            @Query("price_change_percentage") String priceChangePercentage);
@@ -73,6 +85,10 @@ public interface CoinGeckoApiService {
     @GET("coins/{id}/market_chart/range")
     Call<MarketChart> getCoinMarketChartRangeById(@Path("id") String id, @Query("vs_currency") String vsCurrency,
                                                   @Query("from") String from, @Query("to") String to);
+
+    @GET("coins/{id}/ohlc")
+    Call<OhlcSample[]> getCoinOhlcById(@Path("id") String id, @Query("vs_currency") String vsCurrency,
+	    @Query("days") Integer days);
 
     @GET("coins/{id}/status_updates")
     Call<StatusUpdates> getCoinStatusUpdateById(@Path("id") String id, @Query("per_page") Integer perPage, @Query("page") Integer page);

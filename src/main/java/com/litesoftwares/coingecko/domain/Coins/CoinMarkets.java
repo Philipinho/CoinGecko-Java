@@ -1,10 +1,13 @@
 package com.litesoftwares.coingecko.domain.Coins;
 
+import java.math.BigDecimal;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.SparklineIn7d;
-import lombok.*;
+
+import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -24,7 +27,7 @@ public class CoinMarkets {
     @JsonProperty("market_cap_rank")
     private long marketCapRank;
     @JsonProperty("fully_diluted_valuation")
-    private long fullyDilutedValuation;
+    private BigDecimal fullyDilutedValuation;
     @JsonProperty("total_volume")
     private double totalVolume;
     @JsonProperty("high_24h")
@@ -49,6 +52,12 @@ public class CoinMarkets {
     private double athChangePercentage;
     @JsonProperty("ath_date")
     private String athDate;
+    @JsonProperty("atl")
+    private double atl;
+    @JsonProperty("atl_change_percentage")
+    private double atlChangePercentage;
+    @JsonProperty("atl_date")
+    private String atlDate;
     @JsonProperty("roi")
     private Roi roi;
     @JsonProperty("last_updated")
@@ -57,6 +66,18 @@ public class CoinMarkets {
     private SparklineIn7d sparklineIn7d;
     @JsonProperty("price_change_percentage_1h_in_currency")
     private double priceChangePercentage1hInCurrency;
+    @JsonProperty("price_change_percentage_24h_in_currency")
+    private double priceChangePercentage24hInCurrency;
+    @JsonProperty("price_change_percentage_7d_in_currency")
+    private double priceChangePercentage7dInCurrency;
+    @JsonProperty("price_change_percentage_14d_in_currency")
+    private double priceChangePercentage14dInCurrency;
+    @JsonProperty("price_change_percentage_30d_in_currency")
+    private double priceChangePercentage30dInCurrency;
+    @JsonProperty("price_change_percentage_200d_in_currency")
+    private double priceChangePercentage200dInCurrency;
+    @JsonProperty("price_change_percentage_1y_in_currency")
+    private double priceChangePercentage1yInCurrency;
 
 }
 

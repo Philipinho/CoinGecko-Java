@@ -1,22 +1,32 @@
 package com.litesoftwares.coingecko.impl;
 
-import com.litesoftwares.coingecko.CoinGeckoApiService;
+import java.util.List;
+import java.util.Map;
+
 import com.litesoftwares.coingecko.CoinGeckoApi;
-import com.litesoftwares.coingecko.domain.*;
-import com.litesoftwares.coingecko.domain.Coins.*;
+import com.litesoftwares.coingecko.CoinGeckoApiClient;
+import com.litesoftwares.coingecko.CoinGeckoApiService;
+import com.litesoftwares.coingecko.domain.AssetPlatforms;
+import com.litesoftwares.coingecko.domain.Ping;
+import com.litesoftwares.coingecko.domain.Coins.CoinFullData;
+import com.litesoftwares.coingecko.domain.Coins.CoinHistoryById;
+import com.litesoftwares.coingecko.domain.Coins.CoinList;
+import com.litesoftwares.coingecko.domain.Coins.CoinMarkets;
+import com.litesoftwares.coingecko.domain.Coins.CoinTickerById;
+import com.litesoftwares.coingecko.domain.Coins.MarketChart;
+import com.litesoftwares.coingecko.domain.Coins.OhlcSample;
 import com.litesoftwares.coingecko.domain.Events.EventCountries;
 import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
-import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangeById;
+import com.litesoftwares.coingecko.domain.Exchanges.Exchanges;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangesList;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangesTickersById;
 import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
 import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
-import com.litesoftwares.coingecko.CoinGeckoApiClient;
-
-import java.util.List;
-import java.util.Map;
 
 public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     private CoinGeckoApiService coinGeckoApiService;
@@ -65,12 +75,12 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public List<CoinMarkets> getCoinMarkets(String vsCurrency) {
-        return getCoinMarkets(vsCurrency,null,null,null,null,false,null);
+        return getCoinMarkets(vsCurrency,null,null,null,null,null,false,null);
     }
 
     @Override
-    public List<CoinMarkets> getCoinMarkets(String vsCurrency, String ids, String order, Integer perPage, Integer page, boolean sparkline, String priceChangePercentage) {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarkets(vsCurrency,ids,order,perPage,page,sparkline,priceChangePercentage));
+    public List<CoinMarkets> getCoinMarkets(String vsCurrency, String ids, String category,  String order, Integer perPage, Integer page, boolean sparkline, String priceChangePercentage) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarkets(vsCurrency,ids,category,order,perPage,page,sparkline,priceChangePercentage));
     }
 
     @Override
@@ -116,6 +126,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     @Override
     public MarketChart getCoinMarketChartRangeById(String id, String vsCurrency, String from, String to) {
         return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarketChartRangeById(id,vsCurrency,from,to));
+    }
+    
+    @Override
+    public OhlcSample[] getCoinOhlcById(String id, String vsCurrency, Integer days) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinOhlcById(id, vsCurrency, days));
     }
 
     @Override
@@ -237,4 +252,5 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     public void shutdown() {
         coinGeckoApi.shutdown();
     }
+
 }

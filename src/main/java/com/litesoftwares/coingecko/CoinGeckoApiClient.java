@@ -1,19 +1,29 @@
 package com.litesoftwares.coingecko;
 
-import com.litesoftwares.coingecko.domain.*;
-import com.litesoftwares.coingecko.domain.Coins.*;
+import java.util.List;
+import java.util.Map;
+
+import com.litesoftwares.coingecko.domain.AssetPlatforms;
+import com.litesoftwares.coingecko.domain.Ping;
+import com.litesoftwares.coingecko.domain.Coins.CoinFullData;
+import com.litesoftwares.coingecko.domain.Coins.CoinHistoryById;
+import com.litesoftwares.coingecko.domain.Coins.CoinList;
+import com.litesoftwares.coingecko.domain.Coins.CoinMarkets;
+import com.litesoftwares.coingecko.domain.Coins.CoinTickerById;
+import com.litesoftwares.coingecko.domain.Coins.MarketChart;
+import com.litesoftwares.coingecko.domain.Coins.OhlcSample;
 import com.litesoftwares.coingecko.domain.Events.EventCountries;
 import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
-import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangeById;
+import com.litesoftwares.coingecko.domain.Exchanges.Exchanges;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangesList;
+import com.litesoftwares.coingecko.domain.Exchanges.ExchangesTickersById;
 import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
 import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
-
-import java.util.List;
-import java.util.Map;
 
 public interface CoinGeckoApiClient {
     Ping ping();
@@ -34,7 +44,7 @@ public interface CoinGeckoApiClient {
 
     List<CoinMarkets> getCoinMarkets(String vsCurrency);
 
-    List<CoinMarkets> getCoinMarkets(String vsCurrency,  String ids, String order,  Integer perPage, Integer page,  boolean sparkline, String priceChangePercentage);
+    List<CoinMarkets> getCoinMarkets(String vsCurrency,  String ids, String category, String order, Integer perPage, Integer page,  boolean sparkline, String priceChangePercentage);
 
     CoinFullData getCoinById(String id);
 
@@ -53,6 +63,8 @@ public interface CoinGeckoApiClient {
     MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days, String interval);
 
     MarketChart getCoinMarketChartRangeById(String id, String vsCurrency, String from, String to);
+    
+    OhlcSample[] getCoinOhlcById(String id, String vsCurrency, Integer days);
 
     StatusUpdates getCoinStatusUpdateById(String id);
 
