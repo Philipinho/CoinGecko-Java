@@ -7,7 +7,9 @@ import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
+import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -64,6 +66,10 @@ public interface CoinGeckoApiService {
     Call<MarketChart> getCoinMarketChartById(@Path("id") String id, @Query("vs_currency") String vsCurrency,
                                         @Query("days") Integer days);
 
+    @GET("coins/{id}/market_chart")
+    Call<MarketChart> getCoinMarketChartById(@Path("id") String id, @Query("vs_currency") String vsCurrency,
+                                             @Query("days") Integer days, @Query("interval") String interval);
+
     @GET("coins/{id}/market_chart/range")
     Call<MarketChart> getCoinMarketChartRangeById(@Path("id") String id, @Query("vs_currency") String vsCurrency,
                                                   @Query("from") String from, @Query("to") String to);
@@ -73,6 +79,9 @@ public interface CoinGeckoApiService {
 
     @GET("coins/{id}/contract/{contract_address}")
     Call<CoinFullData> getCoinInfoByContractAddress(@Path("id") String id, @Path("contract_address") String contractAddress);
+
+    @GET("asset_platforms")
+    Call<List<AssetPlatforms>> getAssetPlatforms();
 
     @GET("exchanges")
     Call<List<Exchanges>> getExchanges(@Query("per_page") int perPage, @Query("page") int page);
@@ -118,6 +127,12 @@ public interface CoinGeckoApiService {
     @GET("exchange_rates")
     Call<ExchangeRates> getExchangeRates();
 
+    @GET("search/trending")
+    Call<Trending> getTrending();
+
     @GET("global")
     Call<Global> getGlobal();
+
+    @GET("global/decentralized_finance_defi")
+    Call<DecentralizedFinanceDefi> getDecentralizedFinanceDefi();
 }

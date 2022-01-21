@@ -9,7 +9,9 @@ import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
+import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
 import com.litesoftwares.coingecko.CoinGeckoApiClient;
 
@@ -107,6 +109,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
+    public MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days, String interval) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarketChartById(id, vsCurrency, days, interval));
+    }
+
+    @Override
     public MarketChart getCoinMarketChartRangeById(String id, String vsCurrency, String from, String to) {
         return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarketChartRangeById(id,vsCurrency,from,to));
     }
@@ -124,6 +131,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     @Override
     public CoinFullData getCoinInfoByContractAddress(String id, String contractAddress) {
         return coinGeckoApi.executeSync(coinGeckoApiService.getCoinInfoByContractAddress(id,contractAddress));
+    }
+
+    @Override
+    public List<AssetPlatforms> getAssetPlatforms(){
+        return coinGeckoApi.executeSync(coinGeckoApiService.getAssetPlatforms());
     }
 
     @Override
@@ -207,7 +219,22 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
+    public Trending getTrending(){
+        return coinGeckoApi.executeSync(coinGeckoApiService.getTrending());
+    }
+
+    @Override
     public Global getGlobal() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getGlobal());
+    }
+
+    @Override
+    public DecentralizedFinanceDefi getDecentralizedFinanceDefi(){
+        return coinGeckoApi.executeSync(coinGeckoApiService.getDecentralizedFinanceDefi());
+    }
+
+    @Override
+    public void shutdown() {
+        coinGeckoApi.shutdown();
     }
 }

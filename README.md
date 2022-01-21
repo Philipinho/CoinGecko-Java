@@ -14,6 +14,7 @@ For examples Goto: <a href="https://github.com/Philipinho/CoinGecko-Java/tree/ma
 ```
 CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
 client.ping();
+client.shutdown();
 ```
 
 To get price of a currency in USD

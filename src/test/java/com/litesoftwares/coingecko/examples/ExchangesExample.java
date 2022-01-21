@@ -44,5 +44,6 @@ public class ExchangesExample {
         long totalExchanges = exchangesList.size();
         System.out.println(totalExchanges);
 
+        client.shutdown();
     }
 }

@@ -7,7 +7,9 @@ import com.litesoftwares.coingecko.domain.Events.EventTypes;
 import com.litesoftwares.coingecko.domain.Events.Events;
 import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
+import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
+import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
 
 import java.util.List;
@@ -48,6 +50,8 @@ public interface CoinGeckoApiClient {
 
     MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days);
 
+    MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days, String interval);
+
     MarketChart getCoinMarketChartRangeById(String id, String vsCurrency, String from, String to);
 
     StatusUpdates getCoinStatusUpdateById(String id);
@@ -55,6 +59,8 @@ public interface CoinGeckoApiClient {
     StatusUpdates getCoinStatusUpdateById(String id, Integer perPage, Integer page);
 
     CoinFullData getCoinInfoByContractAddress(String id, String contractAddress);
+
+    List<AssetPlatforms> getAssetPlatforms();
 
     List<Exchanges> getExchanges();
 
@@ -88,5 +94,11 @@ public interface CoinGeckoApiClient {
 
     ExchangeRates getExchangeRates();
 
+    Trending getTrending();
+
     Global getGlobal();
+
+    DecentralizedFinanceDefi getDecentralizedFinanceDefi();
+
+    void shutdown();
 }

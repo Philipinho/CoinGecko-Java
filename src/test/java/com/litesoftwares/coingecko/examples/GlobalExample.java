@@ -20,5 +20,6 @@ public class GlobalExample {
         long activeCryptoCurrencies = global.getData().getActiveCryptocurrencies();
         System.out.println(activeCryptoCurrencies);
 
+        client.shutdown();
     }
 }
