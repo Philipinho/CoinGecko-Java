@@ -19,13 +19,25 @@ import java.util.List;
 import java.util.Map;
 
 public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
+    static final Long DEFAULT_CONNECTION_TIMEOUT = 10L;
+    static final Long DEFAULT_READ_TIMEOUT = 10L;
+    static final Long DEFAULT_WRITE_TIMEOUT = 10L;
+
     private CoinGeckoApiService coinGeckoApiService;
     private CoinGeckoApi coinGeckoApi;
 
-    public CoinGeckoApiClientImpl(){
-        this.coinGeckoApi = new CoinGeckoApi();
-        this.coinGeckoApiService = coinGeckoApi.createService(CoinGeckoApiService.class);
+    public CoinGeckoApiClientImpl() {
+        this(DEFAULT_CONNECTION_TIMEOUT, DEFAULT_READ_TIMEOUT, DEFAULT_WRITE_TIMEOUT);
+    }
 
+    public CoinGeckoApiClientImpl(Long connectionTimeoutSeconds, Long readTimeoutSeconds, Long writeTimeoutSeconds){
+        this.coinGeckoApi = new CoinGeckoApi();
+        this.coinGeckoApiService = coinGeckoApi.createService(
+                CoinGeckoApiService.class,
+                connectionTimeoutSeconds,
+                readTimeoutSeconds,
+                writeTimeoutSeconds
+        );
     }
 
     @Override

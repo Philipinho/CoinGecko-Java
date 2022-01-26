@@ -9,20 +9,27 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.util.concurrent.TimeUnit;
 
 public class CoinGeckoApi {
     private final String API_BASE_URL = "https://api.coingecko.com/api/v3/";
 
-    private OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+    private OkHttpClient okHttpClient = null;
+    private Retrofit retrofit = null;
 
-    private Retrofit.Builder builder = new Retrofit.Builder()
-            .baseUrl(API_BASE_URL)
-            .client(okHttpClient)
-            .addConverterFactory(JacksonConverterFactory.create());
+    public <S> S createService(Class<S> serviceClass, Long connectionTimeoutSeconds, Long readTimeoutSeconds, Long writeTimeoutSeconds){
+        okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(connectionTimeoutSeconds, TimeUnit.SECONDS)
+                .readTimeout(readTimeoutSeconds, TimeUnit.SECONDS)
+                .writeTimeout(writeTimeoutSeconds, TimeUnit.SECONDS)
+                .build();
 
-    private Retrofit retrofit = builder.build();
+        retrofit = new Retrofit.Builder()
+                .baseUrl(API_BASE_URL)
+                .client(okHttpClient)
+                .addConverterFactory(JacksonConverterFactory.create())
+                .build();
 
-    public <S> S createService(Class<S> serviceClass){
         return retrofit.create(serviceClass);
     }
 
