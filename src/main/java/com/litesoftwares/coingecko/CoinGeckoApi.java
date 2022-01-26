@@ -38,6 +38,13 @@ public class CoinGeckoApi {
             Response<T> response = call.execute();
             if (response.isSuccessful()) {
                 return response.body();
+            } else if(response.code() == 429) {
+                // When the client gets rate limited the response is a CloudFlare error page,
+                // not a regular error body.
+                CoinGeckoApiError apiError = new CoinGeckoApiError();
+                apiError.setCode(1015);
+                apiError.setMessage("Rate limited");
+                throw new CoinGeckoApiException(apiError);
             } else {
                 try {
                     CoinGeckoApiError apiError = getCoinGeckoApiError(response);
