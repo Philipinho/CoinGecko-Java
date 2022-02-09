@@ -24,7 +24,7 @@ public class CoinMarkets {
     @JsonProperty("market_cap_rank")
     private long marketCapRank;
     @JsonProperty("fully_diluted_valuation")
-    private long fullyDilutedValuation;
+    private double fullyDilutedValuation;
     @JsonProperty("total_volume")
     private double totalVolume;
     @JsonProperty("high_24h")
