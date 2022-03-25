@@ -54,7 +54,7 @@ public interface CoinGeckoApiClient {
 
     MarketChart getCoinMarketChartRangeById(String id, String vsCurrency, String from, String to);
 
-    List<List<String>> getCoinOHLC(String id, String vsCurrency, String days);
+    List<List<String>> getCoinOHLC(String id, String vsCurrency, Integer days);
 
     StatusUpdates getCoinStatusUpdateById(String id);
 

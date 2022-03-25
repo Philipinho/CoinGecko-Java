@@ -75,7 +75,7 @@ public interface CoinGeckoApiService {
                                                   @Query("from") String from, @Query("to") String to);
 
     @GET("coins/{id}/ohlc")
-    Call<List<List<String>>> getCoinOHLC(@Path("id") String id, @Query("vs_currency") String vsCurrency, @Query("days") String days);
+    Call<List<List<String>>> getCoinOHLC(@Path("id") String id, @Query("vs_currency") String vsCurrency, @Query("days") Integer days);
 
     @GET("coins/{id}/status_updates")
     Call<StatusUpdates> getCoinStatusUpdateById(@Path("id") String id, @Query("per_page") Integer perPage, @Query("page") Integer page);

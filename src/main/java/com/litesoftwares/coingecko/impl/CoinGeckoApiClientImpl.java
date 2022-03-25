@@ -131,7 +131,7 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
-    public List<List<String>> getCoinOHLC(String id, String vsCurrency, String days) {
+    public List<List<String>> getCoinOHLC(String id, String vsCurrency, Integer days) {
         return coinGeckoApi.executeSync(coinGeckoApiService.getCoinOHLC(id,vsCurrency,days));
     }
 

@@ -50,7 +50,7 @@ public class CoinsExample {
         String icoStartDate = omiseGoIcoInfo.getIcoStartDate();
         System.out.println(icoStartDate);
 
-        List<List<String>> coinOHLC = client.getCoinOHLC("bitcoin", "usd", "1");
+        List<List<String>> coinOHLC = client.getCoinOHLC("bitcoin", "usd", 1);
         System.out.println(coinOHLC);
 
         client.shutdown();
