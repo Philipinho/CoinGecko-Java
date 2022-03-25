@@ -34,7 +34,6 @@ public class CoinsExample {
         String genesisDate = bitcoinInfo.getGenesisDate();
         System.out.println(genesisDate);
 
-
         DeveloperData bitcoinDevData = bitcoinInfo.getDeveloperData();
         System.out.println(bitcoinDevData);
 
@@ -50,6 +49,9 @@ public class CoinsExample {
         IcoData omiseGoIcoInfo = omiseGoInfo.getIcoData();
         String icoStartDate = omiseGoIcoInfo.getIcoStartDate();
         System.out.println(icoStartDate);
+
+        List<List<String>> coinOHLC = client.getCoinOHLC("bitcoin", "usd", "1");
+        System.out.println(coinOHLC);
 
         client.shutdown();
     }

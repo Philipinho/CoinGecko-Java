@@ -131,6 +131,11 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     }
 
     @Override
+    public List<List<String>> getCoinOHLC(String id, String vsCurrency, String days) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinOHLC(id,vsCurrency,days));
+    }
+
+    @Override
     public StatusUpdates getCoinStatusUpdateById(String id) {
         return getCoinStatusUpdateById(id,null,null);
     }
