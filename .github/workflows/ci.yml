@@ -13,6 +13,7 @@ jobs:
           distribution: adopt
           java-version: 8
           cache: maven
+      - run: mvn test
       - run: mvn -B package --file pom.xml
       - run: "echo '::set-output name=name::build-'$(date +%Y-%m-%d-%H%M)" #$(date +%Y%m%d-%H%M%S) #$(git rev-parse HEAD | cut -c 1-8) #LATEST #$(basename "${{ github.ref }}")
         id: release-name
