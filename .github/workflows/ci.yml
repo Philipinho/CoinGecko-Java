@@ -4,24 +4,37 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build-test:
+  build-test-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
-          java-version: '8'
-          cache: 'maven'
-      - name: Build and Test
-        run: mvn -B package --file pom.xml
-  package-release:
-    needs: build-test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Package
-        run: mvn -B package --file pom.xml
-      - name: Determine Release Name
-        run: "echo '::set-output name=name::build-'$(date +%Y-%m-%d-%H%M)" #$(date +%Y%m%d-%H%M%S) #$(git rev-parse HEAD | cut -c 1-8) #LATEST #$(basename "${{ github.ref }}")
+          distribution: adopt
+          java-version: 8
+          cache: maven
+      - run: mvn -B package --file pom.xml
+      - run: "echo '::set-output name=name::build-'$(date +%Y-%m-%d-%H%M)" #$(date +%Y%m%d-%H%M%S) #$(git rev-parse HEAD | cut -c 1-8) #LATEST #$(basename "${{ github.ref }}")
         id: release-name
+      - uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.release-name.outputs.name }}
+          release_name: ${{ steps.release-name.outputs.name }}
+          draft: true
+          prerelease: false
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./target/scala-2.13/traviona-cloud-assembly-0.1.2.jar
+          asset_name: traviona-cloud-${{ steps.release-name.outputs.name }}.jar
+          asset_content_type: application/zip
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
