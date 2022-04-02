@@ -31,7 +31,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./target/coingecko-java-1.0-SNAPSHOT.jar
-          asset_name: traviona-cloud-${{ steps.release-name.outputs.name }}.jar
+          asset_name: coingecko-java-${{ steps.release-name.outputs.name }}.jar
           asset_content_type: application/zip
       - uses: eregon/publish-release@v1
         env:
