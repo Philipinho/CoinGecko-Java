@@ -1,0 +1,33 @@
+name: publish-coin-gecko
+on: push
+jobs:
+  publish-java-protos:
+    runs-on: ubuntu-latest
+
+    # needed to get OIDC token to auth with AWS
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      # Run `git checkout`
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Build 
+      - name: Build java jar
+        run: ./gradlew assemble --no-daemon
+
+      # Configure AWS Credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: arn:aws:iam::718537141989:role/github-actions
+          aws-region: us-east-1
+
+      # Publish to AWS codeartifact
+      - name: Publish java maven package
+        run: >-
+          CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain opensea-prod --domain-owner 718537141989 --query authorizationToken --output text)
+          ./gradlew publish --no-daemon
+
