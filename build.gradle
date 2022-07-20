@@ -22,7 +22,7 @@ dependencies {
 }
 
 group = 'com.litesoftwares'
-version = '1.0-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 description = 'coingecko-java'
 
 tasks.withType(JavaCompile) {
@@ -32,8 +32,6 @@ tasks.withType(JavaCompile) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.opensea'
-            artifactId = 'protos'
             from components.java
         }
     }

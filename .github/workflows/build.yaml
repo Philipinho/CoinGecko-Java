@@ -1,7 +1,7 @@
 name: publish-coin-gecko
 on: push
 jobs:
-  publish-java-protos:
+  publish-java-library:
     runs-on: ubuntu-latest
 
     # needed to get OIDC token to auth with AWS
