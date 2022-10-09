@@ -9,7 +9,6 @@ This API client covers all CoinGecko's API endpoints and i'll try to update it w
 
 For complete API documentation please refer to https://www.coingecko.com/api/docs/v3.
 
-For examples Goto: <a href="https://github.com/Philipinho/CoinGecko-Java/tree/master/src/test/java/com/litesoftwares/coingecko/examples">Examples</a>.
 
 ```
 CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
@@ -25,7 +24,7 @@ client.getPrice("bitcoin",Currency.USD);
 ## License
 MIT License
 
-Copyright (c) 2019 Philip Okugbe
+Copyright (c) 2019 Sean Michael Hutcheson II
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
