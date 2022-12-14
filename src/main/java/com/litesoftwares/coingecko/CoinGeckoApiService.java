@@ -9,6 +9,7 @@ import com.litesoftwares.coingecko.domain.ExchangeRates.ExchangeRates;
 import com.litesoftwares.coingecko.domain.Exchanges.*;
 import com.litesoftwares.coingecko.domain.Global.DecentralizedFinanceDefi;
 import com.litesoftwares.coingecko.domain.Global.Global;
+import com.litesoftwares.coingecko.domain.Search.Search;
 import com.litesoftwares.coingecko.domain.Search.Trending;
 import com.litesoftwares.coingecko.domain.Status.StatusUpdates;
 import retrofit2.Call;
@@ -132,6 +133,9 @@ public interface CoinGeckoApiService {
 
     @GET("search/trending")
     Call<Trending> getTrending();
+
+    @GET("search")
+    Call<Search> getSearch(@Query("query") String query);
 
     @GET("global")
     Call<Global> getGlobal();
