@@ -2,6 +2,7 @@ package com.litesoftwares.coingecko.domain.Global;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import lombok.*;
 
 import java.util.Map;
@@ -26,7 +27,7 @@ public class GlobalData {
     @JsonProperty("market_cap_percentage")
     private Map<String, Double> marketCapPercentage;
     @JsonProperty("market_cap_change_percentage_24h_usd")
-    private double marketCapChangePercentage24hUsd;
+    private BigDecimal marketCapChangePercentage24hUsd;
     @JsonProperty("updated_at")
     private long updatedAt;
 

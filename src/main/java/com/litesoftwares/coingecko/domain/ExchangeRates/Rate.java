@@ -2,6 +2,7 @@ package com.litesoftwares.coingecko.domain.ExchangeRates;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import lombok.*;
 
 @Data
@@ -12,7 +13,7 @@ public class Rate {
     @JsonProperty("unit")
     private String unit;
     @JsonProperty("value")
-    private double value;
+    private BigDecimal value;
     @JsonProperty("type")
     private String type;
 

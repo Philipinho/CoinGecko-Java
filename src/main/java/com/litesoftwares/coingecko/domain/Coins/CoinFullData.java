@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.*;
 import com.litesoftwares.coingecko.domain.Shared.Image;
 import com.litesoftwares.coingecko.domain.Shared.Ticker;
+import java.math.BigDecimal;
 import lombok.*;
 
 import java.util.List;
@@ -46,9 +47,9 @@ public class CoinFullData {
     @JsonProperty("genesis_date")
     private String genesisDate;
     @JsonProperty("sentiment_votes_up_percentage")
-    private double sentimentVotesUpPercentage;
+    private BigDecimal sentimentVotesUpPercentage;
     @JsonProperty("sentiment_votes_down_percentage")
-    private double sentimentVotesDownPercentage;
+    private BigDecimal sentimentVotesDownPercentage;
     @JsonProperty("contract_address")
     private String contractAddress;
     @JsonProperty("ico_data")
@@ -58,15 +59,15 @@ public class CoinFullData {
     @JsonProperty("coingecko_rank")
     private long coingeckoRank;
     @JsonProperty("coingecko_score")
-    private double coingeckoScore;
+    private BigDecimal coingeckoScore;
     @JsonProperty("developer_score")
-    private double developerScore;
+    private BigDecimal developerScore;
     @JsonProperty("community_score")
-    private double communityScore;
+    private BigDecimal communityScore;
     @JsonProperty("liquidity_score")
-    private double liquidityScore;
+    private BigDecimal liquidityScore;
     @JsonProperty("public_interest_score")
-    private double publicInterestScore;
+    private BigDecimal publicInterestScore;
     @JsonProperty("market_data")
     private MarketData marketData;
     @JsonProperty("community_data")

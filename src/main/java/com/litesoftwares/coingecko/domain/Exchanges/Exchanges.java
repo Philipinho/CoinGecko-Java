@@ -2,6 +2,7 @@ package com.litesoftwares.coingecko.domain.Exchanges;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import lombok.*;
 
 @Data
@@ -24,7 +25,7 @@ public class Exchanges {
     @JsonProperty("has_trading_incentive")
     boolean hasTradingIncentive;
     @JsonProperty("trade_volume_24h_btc")
-    double tradeVolume24hBtc;
+    BigDecimal tradeVolume24hBtc;
     @JsonProperty("trust_score")
     int trustScore;
     @JsonProperty("trust_score_rank")

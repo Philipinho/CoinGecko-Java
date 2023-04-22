@@ -2,6 +2,7 @@ package com.litesoftwares.coingecko.domain.Global;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import lombok.Data;
 
 @Data
@@ -21,6 +22,6 @@ public class DecentralizedFinanceDefiData {
     @JsonProperty("top_coin_name")
     private String topCoinName;
     @JsonProperty("top_coin_defi_dominance")
-    private double topCoinDefiDominance;
+    private BigDecimal topCoinDefiDominance;
 
 }
