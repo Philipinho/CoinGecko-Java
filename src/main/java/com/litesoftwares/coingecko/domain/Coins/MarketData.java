@@ -3,6 +3,7 @@ package com.litesoftwares.coingecko.domain.Coins;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.litesoftwares.coingecko.domain.Coins.CoinData.Roi;
+import java.math.BigDecimal;
 import lombok.*;
 
 import java.util.Map;
@@ -37,25 +38,25 @@ public class MarketData {
     @JsonProperty("low_24h")
     private Map<String, Double> low24h;
     @JsonProperty("price_change_24h")
-    private double priceChange24h;
+    private BigDecimal priceChange24h;
     @JsonProperty("price_change_percentage_24h")
-    private double priceChangePercentage24h;
+    private BigDecimal priceChangePercentage24h;
     @JsonProperty("price_change_percentage_7d")
-    private double priceChangePercentage7d;
+    private BigDecimal priceChangePercentage7d;
     @JsonProperty("price_change_percentage_14d")
-    private double priceChangePercentage14d;
+    private BigDecimal priceChangePercentage14d;
     @JsonProperty("price_change_percentage_30d")
-    private double priceChangePercentage30d;
+    private BigDecimal priceChangePercentage30d;
     @JsonProperty("price_change_percentage_60d")
-    private double priceChangePercentage60d;
+    private BigDecimal priceChangePercentage60d;
     @JsonProperty("price_change_percentage_200d")
-    private double priceChangePercentage200d;
+    private BigDecimal priceChangePercentage200d;
     @JsonProperty("price_change_percentage_1y")
-    private double priceChangePercentage1y;
+    private BigDecimal priceChangePercentage1y;
     @JsonProperty("market_cap_change_24h")
-    private double marketCapChange24h;
+    private BigDecimal marketCapChange24h;
     @JsonProperty("market_cap_change_percentage_24h")
-    private double marketCapChangePercentage24h;
+    private BigDecimal marketCapChangePercentage24h;
     @JsonProperty("price_change_24h_in_currency")
     private Map<String, Double> priceChange24hInCurrency;
     @JsonProperty("price_change_percentage_1h_in_currency")
@@ -87,11 +88,11 @@ public class MarketData {
     @JsonProperty("fdv_to_tvl_ratio")
     private String fdvToTvlRatio;
     @JsonProperty("total_supply")
-    private double totalSupply;
+    private BigDecimal totalSupply;
     @JsonProperty("max_supply")
-    private double maxSupply;
+    private BigDecimal maxSupply;
     @JsonProperty("circulating_supply")
-    private double circulatingSupply;
+    private BigDecimal circulatingSupply;
     @JsonProperty("last_updated")
     private String lastUpdated;
 

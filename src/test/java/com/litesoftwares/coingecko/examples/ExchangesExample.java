@@ -7,6 +7,7 @@ import com.litesoftwares.coingecko.domain.Exchanges.ExchangesList;
 import com.litesoftwares.coingecko.domain.Exchanges.ExchangesTickersById;
 import com.litesoftwares.coingecko.impl.CoinGeckoApiClientImpl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ExchangesExample {
@@ -29,7 +30,7 @@ public class ExchangesExample {
         String logoUrl = binance.getImage();
         System.out.println(logoUrl);
 
-        double tradeVolume = binance.getTradeVolume24hBtc();
+        BigDecimal tradeVolume = binance.getTradeVolume24hBtc();
         System.out.println(tradeVolume);
 
         ExchangesTickersById binanceTickers = client.getExchangesTickersById("binance");

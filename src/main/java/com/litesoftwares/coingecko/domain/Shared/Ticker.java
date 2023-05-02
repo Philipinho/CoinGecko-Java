@@ -2,6 +2,7 @@ package com.litesoftwares.coingecko.domain.Shared;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import lombok.*;
 
 import java.util.Map;
@@ -16,9 +17,9 @@ public class Ticker {
     @JsonProperty("market")
     private Market market;
     @JsonProperty("last")
-    private double last;
+    private BigDecimal last;
     @JsonProperty("volume")
-    private double volume;
+    private BigDecimal volume;
     @JsonProperty("converted_last")
     private Map<String, String> convertedLast;
     @JsonProperty("converted_volume")
@@ -26,7 +27,7 @@ public class Ticker {
     @JsonProperty("trust_score")
     private String trustScore;
     @JsonProperty("bid_ask_spread_percentage")
-    private double bidAskSpreadPercentage;
+    private BigDecimal bidAskSpreadPercentage;
     @JsonProperty("timestamp")
     private String timestamp;
     @JsonProperty("last_traded_at")

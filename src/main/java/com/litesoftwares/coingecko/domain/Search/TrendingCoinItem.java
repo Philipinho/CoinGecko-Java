@@ -2,6 +2,7 @@ package com.litesoftwares.coingecko.domain.Search;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
 import lombok.Data;
 
 @Data
@@ -26,7 +27,7 @@ public class TrendingCoinItem {
     @JsonProperty("slug")
     private String slug;
     @JsonProperty("price_btc")
-    private double priceBtc;
+    private BigDecimal priceBtc;
     @JsonProperty("score")
     private int score;
 }
