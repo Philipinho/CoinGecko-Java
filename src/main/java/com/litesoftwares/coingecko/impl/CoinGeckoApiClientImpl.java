@@ -201,31 +201,37 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
         return coinGeckoApi.executeSync(coinGeckoApiService.getExchangesVolumeChart(id,days));
     }
 
+    @Deprecated
     @Override
     public StatusUpdates getStatusUpdates() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getStatusUpdates());
     }
 
+    @Deprecated
     @Override
     public StatusUpdates getStatusUpdates(String category, String projectType, Integer perPage, Integer page) {
         return coinGeckoApi.executeSync(coinGeckoApiService.getStatusUpdates(category, projectType,perPage,page));
     }
 
+    @Deprecated
     @Override
     public Events getEvents() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getEvents());
     }
 
+    @Deprecated
     @Override
     public Events getEvents(String countryCode, String type, Integer page, boolean upcomingEventsOnly, String fromDate, String toDate) {
         return coinGeckoApi.executeSync(coinGeckoApiService.getEvents(countryCode,type,page,upcomingEventsOnly,fromDate,toDate));
     }
 
+    @Deprecated
     @Override
     public EventCountries getEventsCountries() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getEventsCountries());
     }
 
+    @Deprecated
     @Override
     public EventTypes getEventsTypes() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getEventsTypes());

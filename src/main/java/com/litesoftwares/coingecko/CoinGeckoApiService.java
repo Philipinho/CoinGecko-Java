@@ -107,24 +107,30 @@ public interface CoinGeckoApiService {
     @GET("exchanges/{id}/volume_chart")
     Call<List<List<String>>> getExchangesVolumeChart(@Path("id") String id,@Query("days") Integer days);
 
+    @Deprecated
     @GET("status_updates")
     Call<StatusUpdates> getStatusUpdates();
 
+    @Deprecated
     @GET("status_updates")
     Call<StatusUpdates> getStatusUpdates(@Query("category") String category, @Query("project_type") String projectType,
                                   @Query("per_page") Integer perPage, @Query("page") Integer page);
 
+    @Deprecated
     @GET("events")
     Call<Events> getEvents();
 
+    @Deprecated
     @GET("events")
     Call<Events> getEvents(@Query("country_code") String countryCode, @Query("type") String type,
                            @Query("page") Integer page, @Query("upcoming_events_only") boolean upcomingEventsOnly,
                            @Query("from_date") String fromDate, @Query("to_date") String toDate);
 
+    @Deprecated
     @GET("events/countries")
     Call<EventCountries> getEventsCountries();
 
+    @Deprecated
     @GET("events/types")
     Call<EventTypes> getEventsTypes();
 
