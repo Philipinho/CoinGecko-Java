@@ -54,7 +54,6 @@ out/
 
 # Maven
 target/
-.settings
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -81,14 +80,7 @@ fabric.properties
 *.zip
 *.tar.gz
 *.rar
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
+*.iml
 
 # Compiled class file
 *.class
