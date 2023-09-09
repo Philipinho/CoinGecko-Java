@@ -56,6 +56,8 @@ public class CoinGeckoApi {
             }
         } catch (IOException e) {
             throw new CoinGeckoApiException(e);
+        } finally {
+            shutdown();
         }
     }
 

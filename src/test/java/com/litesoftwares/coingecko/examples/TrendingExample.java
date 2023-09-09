@@ -14,7 +14,9 @@ public class TrendingExample{
 
         System.out.println(trending.getCoins());
 
-        client.shutdown();
+        Trending trending2 = client.getTrending();
+
+        System.out.println(trending2.getCoins());
     }
 
 }

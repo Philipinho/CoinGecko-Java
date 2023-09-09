@@ -52,7 +52,5 @@ public class CoinsExample {
 
         List<List<String>> coinOHLC = client.getCoinOHLC("bitcoin", "usd", 1);
         System.out.println(coinOHLC);
-
-        client.shutdown();
     }
 }

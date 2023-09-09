@@ -10,8 +10,6 @@ public class AssetPlatformsExample{
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
 
         System.out.println(client.getAssetPlatforms());
-
-        client.shutdown();
     }
 
 }

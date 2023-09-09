@@ -13,8 +13,5 @@ public class DecentralizedFinanceDefiExample {
         DecentralizedFinanceDefi defi = client.getDecentralizedFinanceDefi();
 
         System.out.println(defi.getData());
-
-        client.shutdown();
-
     }
 }

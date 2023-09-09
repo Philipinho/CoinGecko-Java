@@ -11,7 +11,5 @@ public class ExchangeRatesExample {
 
         ExchangeRates exchangeRates = client.getExchangeRates();
         System.out.println(exchangeRates);
-
-        client.shutdown();
     }
 }
