@@ -18,7 +18,5 @@ public class SimpleExample {
         double bitcoinPrice = bitcoin.get("bitcoin").get(Currency.USD);
 
         System.out.println(bitcoinPrice);
-
-        client.shutdown();
     }
 }

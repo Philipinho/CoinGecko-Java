@@ -56,12 +56,16 @@ public class CoinGeckoApi {
             }
         } catch (IOException e) {
             throw new CoinGeckoApiException(e);
+        } finally {
+            shutdown();
         }
     }
 
     public void shutdown() {
-        okHttpClient.dispatcher().executorService().shutdown();
-        okHttpClient.connectionPool().evictAll();
+        if (okHttpClient != null) {
+            okHttpClient.dispatcher().executorService().shutdown();
+            okHttpClient.connectionPool().evictAll();
+        }
     }
 
     private CoinGeckoApiError getCoinGeckoApiError(Response<?> response) throws IOException{

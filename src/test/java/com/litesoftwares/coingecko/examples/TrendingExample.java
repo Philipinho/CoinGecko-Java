@@ -11,10 +11,7 @@ public class TrendingExample{
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
 
         Trending trending = client.getTrending();
-
         System.out.println(trending.getCoins());
-
-        client.shutdown();
     }
 
 }

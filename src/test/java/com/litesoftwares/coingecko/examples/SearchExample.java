@@ -14,8 +14,6 @@ public class SearchExample {
         Search search = client.getSearchResult(query);
 
         System.out.println(search);
-
-        client.shutdown();
     }
 
 }

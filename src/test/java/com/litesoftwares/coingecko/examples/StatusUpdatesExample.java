@@ -14,7 +14,5 @@ public class StatusUpdatesExample {
 
         long totalStatusUpdates = statusUpdates.getUpdates().size();
         System.out.println(totalStatusUpdates);
-
-        client.shutdown();
     }
 }

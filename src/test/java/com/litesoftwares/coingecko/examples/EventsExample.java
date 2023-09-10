@@ -21,7 +21,5 @@ public class EventsExample {
 
         EventTypes eventsTypes = client.getEventsTypes();
         System.out.println(eventsTypes);
-
-        client.shutdown();
     }
 }
