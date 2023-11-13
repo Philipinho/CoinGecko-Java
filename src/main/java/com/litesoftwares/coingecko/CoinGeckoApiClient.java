@@ -83,16 +83,22 @@ public interface CoinGeckoApiClient {
 
     List<List<String>> getExchangesVolumeChart(String id, Integer days);
 
+    @Deprecated
     StatusUpdates getStatusUpdates();
 
+    @Deprecated
     StatusUpdates getStatusUpdates(String category, String projectType, Integer perPage, Integer page);
 
+    @Deprecated
     Events getEvents();
 
+    @Deprecated
     Events getEvents(String countryCode, String type, Integer page, boolean upcomingEventsOnly, String fromDate, String toDate);
 
+    @Deprecated
     EventCountries getEventsCountries();
 
+    @Deprecated
     EventTypes getEventsTypes();
 
     ExchangeRates getExchangeRates();
