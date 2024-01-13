@@ -44,12 +44,20 @@ public class CoinMarkets {
     private BigDecimal circulatingSupply;
     @JsonProperty("total_supply")
     private BigDecimal totalSupply;
+    @JsonProperty("max_supply")
+    private int maxSupply;
     @JsonProperty("ath")
     private BigDecimal ath;
     @JsonProperty("ath_change_percentage")
     private BigDecimal athChangePercentage;
     @JsonProperty("ath_date")
     private String athDate;
+    @JsonProperty("atl")
+    private BigDecimal atl;
+    @JsonProperty("atl_change_percentage")
+    private BigDecimal atlChangePercentage;
+    @JsonProperty("atl_date")
+    private String atlDate;
     @JsonProperty("roi")
     private Roi roi;
     @JsonProperty("last_updated")
