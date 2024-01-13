@@ -45,7 +45,7 @@ public class CoinMarkets {
     @JsonProperty("total_supply")
     private BigDecimal totalSupply;
     @JsonProperty("max_supply")
-    private int maxSupply;
+    private BigDecimal maxSupply;
     @JsonProperty("ath")
     private BigDecimal ath;
     @JsonProperty("ath_change_percentage")
