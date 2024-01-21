@@ -46,6 +46,7 @@ public interface CoinGeckoApiService {
 
     @GET("coins/markets")
     Call<List<CoinMarkets>> getCoinMarkets(@Query("vs_currency") String vsCurrency, @Query("ids") String ids,
+                                           @Query("category") String category,
                                            @Query("order") String order, @Query("per_page") Integer perPage,
                                            @Query("page") Integer page, @Query("sparkline") boolean sparkline,
                                            @Query("price_change_percentage") String priceChangePercentage);

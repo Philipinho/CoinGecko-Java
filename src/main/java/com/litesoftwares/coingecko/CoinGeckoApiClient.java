@@ -37,6 +37,8 @@ public interface CoinGeckoApiClient {
 
     List<CoinMarkets> getCoinMarkets(String vsCurrency,  String ids, String order,  Integer perPage, Integer page,  boolean sparkline, String priceChangePercentage);
 
+    List<CoinMarkets> getCoinMarkets(String vsCurrency,  String ids, String category, String order,  Integer perPage, Integer page,  boolean sparkline, String priceChangePercentage);
+
     CoinFullData getCoinById(String id);
 
     CoinFullData getCoinById(String id, boolean localization, boolean tickers, boolean marketData, boolean communityData, boolean developerData, boolean sparkline);

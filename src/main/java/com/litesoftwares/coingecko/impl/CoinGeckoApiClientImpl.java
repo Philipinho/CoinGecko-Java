@@ -83,7 +83,12 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public List<CoinMarkets> getCoinMarkets(String vsCurrency, String ids, String order, Integer perPage, Integer page, boolean sparkline, String priceChangePercentage) {
-        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarkets(vsCurrency,ids,order,perPage,page,sparkline,priceChangePercentage));
+        return getCoinMarkets(vsCurrency,ids,null,order,perPage,page,sparkline,priceChangePercentage);
+    }
+
+    @Override
+    public List<CoinMarkets> getCoinMarkets(String vsCurrency, String ids, String category,  String order, Integer perPage, Integer page, boolean sparkline, String priceChangePercentage) {
+        return coinGeckoApi.executeSync(coinGeckoApiService.getCoinMarkets(vsCurrency,ids,category,order,perPage,page,sparkline,priceChangePercentage));
     }
 
     @Override
