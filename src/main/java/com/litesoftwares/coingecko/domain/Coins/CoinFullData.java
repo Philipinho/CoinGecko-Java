@@ -29,7 +29,7 @@ public class CoinFullData {
     @JsonProperty("hashing_algorithm")
     private String hashingAlgorithm;
     @JsonProperty("categories")
-    private List<Object> categories;
+    private List<String> categories;
     @JsonProperty("public_notice")
     private String publicNotice;
     @JsonProperty("additional_notices")
