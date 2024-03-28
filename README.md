@@ -1,4 +1,5 @@
 # CoinGecko-Java
+![CoinGecko build status](https://github.com/Philipinho/CoinGecko-Java/actions/workflows/maven.yml/badge.svg)
 Java wrapper for the CoinGecko API.
 <p align="center">
     <img src="https://i.ibb.co/sRLCZk2/java-gecko-200.png" alt="java-gecko-200" alt="CoinGecko-Java logo" alt="CoinGecko-Java Logo"/>
